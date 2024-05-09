@@ -1,0 +1,857 @@
+/* Root of this page */
+:root {
+    --primaryFont: "Josefin Sans", sans-serif;
+    --secondaryFont: "Roboto", sans-serif;
+    --text-color: #11161e;
+	--darkBlue: #151a32;
+	--comon-colot: #fff;
+	--primaryColor: #ff6f61;
+	--paragraph-color: #444;
+	--primaryColorDark: #ff5645;
+	--background-color: #f1f1f1;
+	--bg: #f1f3f4;
+	--black: #000;
+	--a6aab7: #a6aab7;
+}
+
+/* Root of this page Ends */
+/* Common Css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul, ol li{
+    list-style: none;
+}
+
+h1,h2, h3, h4, h5, h6, a, span, p{
+    margin: 0;
+    padding: 0;
+}
+
+input,
+button{
+    border: none;
+    outline: none;
+}
+
+body{
+    font-family: var(--primaryFont);
+    position: relative;
+}
+
+/* Product Div Common Css Design */
+
+.product{
+    padding: 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+
+.product .productDiscribtion{
+    text-align: center;
+    padding: 24px 0 26px;
+}
+
+.product .productDiscribtion h5{
+    font-family: var(--primaryFont);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 162%;
+    color: var(--paragraph-color);
+}
+
+.product .productDiscribtion h3{
+    font-family: var(--primaryFont);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 156%;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.product .productDiscribtion .rating{
+    color: var(--primaryColorDark);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    margin-top: 11px;
+}
+
+.product .productImage{
+    position: relative;
+}
+
+.product .productImage .lebel{
+    position: absolute;
+    top: 11.8px;
+    left: 24px;
+    padding: 0 8px;
+    border-radius: 13px 0 0  13px;
+    font-family: var(--primaryFont);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 162%;
+    color: var(--comon-colot);
+    background: var(--primaryColor);
+    transform: rotate(-90deg);
+}
+
+.product .productImage .overlay li{
+    transform: translateX(-50px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.35s ease;
+}
+
+.product .productImage .overlay li:nth-child(2){
+    transition-delay: 0.15s;
+}
+.product .productImage .overlay li:nth-child(3){
+    transition-delay: 0.3s;
+}
+.product .productImage .overlay li:nth-child(4){
+    transition-delay: 0.45s
+}
+
+.product:hover .productImage .overlay li{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0px);
+}
+
+.product .productImage .overlay{
+    position: absolute;
+    right: 17px;
+    top: 38px;
+}
+
+.product .productImage .overlay a{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--text-color);
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+    transition: 0.4s ease;
+}
+
+.product .productImage .overlay a:hover{
+    background: var(--primaryColor);
+    color: var(--comon-colot);
+}
+
+/* Arrows */
+.leftArrow,
+.rightArrow{
+    background: rgba(0,0,0,0.4);
+    color: var(--comon-colot);
+    width: 30px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+}
+
+.leftArrow{
+    left: 38px;
+}
+
+.rightArrow{
+    right: 7px;
+}
+/* Arrows Ends */
+/* Product Div Common Css Design Ends */
+/* Common Css Ends */
+
+/* nav bar Section */
+/* Desktop Menu bar */
+#desktopNavBar ul li a{
+    font-family: var(--primaryFont);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 162%;
+    color: var(--text-color);
+    padding: 37px 21.5px 40px;
+    transition: 0.3s all ease;
+}
+
+#desktopNavBar ul li:hover> a,
+#desktopNavBar ul li a.active-link{
+    color: var(--primaryColor);
+}
+
+#desktopNavBar ul li a i{
+    transition: 0.4s all ease;
+}
+
+#desktopNavBar ul li:hover a i{
+    transform: rotate(180deg);
+}
+
+/* submenu */
+#desktopNavBar ul li{
+    position: relative;
+}
+#desktopNavBar ul li .submenu{
+    position: absolute;
+    border: 1px solid #ccc;
+    width: 250px;
+    height: auto;
+    top: 80px;
+    left: 20px;
+    border-radius: 6px;
+    margin-top: 80px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s ease;
+    z-index: 999999;
+    background: var(--comon-colot);
+}
+
+#desktopNavBar ul li:hover > .submenu{
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+#desktopNavBar ul li .submenu ul{
+    padding: 0 5px;
+}
+
+#desktopNavBar ul li .submenu ul li{
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+}
+
+#desktopNavBar ul li .submenu ul li:hover{
+    padding-right: 0px;
+    padding-left: 30px;
+}
+/* submenu Ends */
+
+/* links part  */
+header nav .links li a{
+    color: var(--darkBlue);
+    font-size: 18px;
+    margin-right: 20px;
+    position: relative;
+}
+
+header nav .links li a span.cardCounter{
+    width: 15px;
+    height: 15px;
+    display: block;
+    background: var(--primaryColor);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    top: -4px;
+    right: 13px;
+    color: #fff;
+}
+/* links part Ends  */
+/* Desktop Menu bar Ends */
+
+/* Mobile Device Nav */
+header #navsm{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 5px 29px 0px;
+    padding: 10px 0;
+}
+
+header #navsm .menuIcon .mobileMenu{
+    font-size: 22px;
+    color: var(--darkBlue);
+    background: none;
+}
+
+/* Offcanvas Part */ 
+#smallMenubar ul{
+    padding: 0;
+}
+#smallMenubar ul li{
+    border-bottom: 1px solid #ccc;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s all ease-in;
+
+}
+#smallMenubar ul li a.text{
+    color: var(--text-color);
+    font-size: 25px;
+    font-family: var(--primaryFont);
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.3s all ease;
+
+}
+
+#smallMenubar ul li:hover a.text{
+    color: var(--primaryColor);
+    transform: translateX(100%);
+}
+
+#smallMenubar ul li a.icon{
+    width: 45px;
+    height: 45px;
+    color: var(--text-color);
+    background: var(--primaryColor);
+    border-radius: 50%;
+    margin-left: 15px;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+}
+#smallMenubar ul li a.icon i{
+    transition: 0.8s all ease;
+}
+
+#smallMenubar ul li:hover a.icon i{
+    transform: rotate(360deg);
+    font-size: 27px;
+    line-height: 27px;
+
+}
+
+#smallMenubar ul li a.icon i{
+    font-size: 20px;
+}
+
+#smallMenu .login{
+    padding: 10px 35px;
+    background: var(--darkBlue);
+    display: block;
+    font-size: 25px;
+    margin-top: 35px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+#smallMenu .login:hover{
+    background: var(--primaryColor);
+}
+#smallMenu .login a{
+    color: #fff;
+    font-family: var(--secondaryFont);
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: 0.3s all ease;
+}
+#smallMenu .login a:hover{
+    color: var(--darkBlue);
+}
+/* Offcanvas Part Ends */
+/* Mobile Device Nav Ends */
+
+/* Searchbar */
+.searchIcon2{
+    position: fixed;
+    top: -40%;
+    right:8%;
+    height: 100%;
+    width: 50px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+}
+
+.box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s all ease;
+    z-index: 99999999;
+}
+
+.box.open{
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-area{
+    width: 100%;
+    max-width: 800px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+
+.form-area input{
+    width: 100%;
+    background: #fff;
+    border: 0;
+    height: 45px;
+    font-size: 25px;
+    flex: 1 1 auto;
+    color: var(--text-color);
+    border-radius: 35px;
+    position: relative;
+    padding-left: 20px;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+}
+
+
+.form-area button{
+    background: var(--primaryColor);
+    font-size: 22px;
+    border: none;
+    width: 55px;
+    height: 49px;
+    border-radius: 50%;
+    outline: 10px solid rgba(0,0,0,0.1);
+    margin-left: 15px;
+    font-family: var(--secondaryFont);
+}
+
+.smallbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s all ease;
+    padding: 0 10px;
+    z-index: 999999;
+}
+
+.smallbox.smOpen{
+    opacity: 1;
+    visibility: visible;
+}
+.searchIconsm{
+    position: fixed;
+    top: -40%;
+    right:8%;
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+}
+
+.searchIconMobile{
+    position: fixed;
+    top: -40%;
+    right:8%;
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+}
+/* Searchbar Ends */
+
+/* Desktop Login page */
+
+/* Desktop Login page Ends */
+/* nav bar Section Ends */
+
+/* Banner Section */
+.bannerSlider .slide *{
+    transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.55s ease;
+}
+
+.bannerSlider .slide.slick-active *{
+    transform: translateY(0px);
+    opacity: 1;
+    visibility: visible;
+}
+.bannerSlider .slide{
+    height: 100vh; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.bannerSlider .slide .banner_cnt h4{
+    font-family: var(--primaryFont);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 156%;
+    color: #1d1d1d;
+    margin-bottom: 14px;
+}
+
+.bannerSlider .slide .banner_cnt h2{
+    font-family: var(--primaryFont);
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 116%;
+    color: #1d1d1d;
+    margin-bottom: 16px;
+    transition-delay: 0.3s;
+}
+
+.bannerSlider .slide .banner_cnt p{
+    font-family: var(--secondaryFont);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 175%;
+    color: #1d1d1d;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    margin-bottom: 29px;
+    transition-delay: 0.5s;
+}
+
+.bannerSlider .slide .banner_cnt a{
+    font-family: var(--primaryFont);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 167%;
+    text-align: center;
+    color: var(--comon-colot);
+    padding: 15px 0 15px 37px;
+    background: var(--primaryColor);
+    transition-delay: 0.7s;
+}
+
+.bannerSlider .slide .banner_cnt a i{
+    padding-left: 5px;
+    padding-right: 37px;
+}
+
+/* BANNER sLIDER */
+.bannerDots{
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 160px;
+}
+
+.bannerDots li button{
+    width: 10.91px;
+    height: 6px;
+    background: var(--comon-colot);
+    border-radius: 5px;
+    color: transparent;
+    border: none;
+    margin-right: 5.45px;
+    transition: 0.45s ease;
+}
+
+.bannerDots li.slick-active button{
+    width: 35px;
+    background: var(--primaryColor);
+}
+/* BANNER sLIDER ENDS */
+/* Banner Section Ends */
+
+/* Beuty Cream reviw section */
+#beutyCream{
+    padding-top: 84px;
+    padding-bottom: 112px;
+}
+
+#beutyCream .img{
+    position: relative;
+}
+
+#beutyCream .firstRow .secondimg{
+    margin: 24px 0 0 0;
+}
+
+#beutyCream .image2{
+    margin-top: 24px;
+
+}
+
+#beutyCream .secondRow img{
+    width: 100%;
+    max-width: 830px;
+}
+
+
+#beutyCream .overlay{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 30px;
+    transition: 0.5s all ease;
+}
+
+#beutyCream #image .overlay{
+    padding-top: 24px;
+}
+
+#beutyCream .img:hover .overlay{
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0;
+}
+
+
+#beutyCream .overlay .content{
+    background: rgba(0,0,0,0.4);
+    width: 92%;
+    height: 88%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#beutyCream .overlay .content h3{
+    font-family: var(--primaryFont);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 133%;
+    text-align: center;
+    color: var(--comon-colot);
+    opacity: 1; ! important
+    padding-bottom: 12px;
+}
+
+#beutyCream .overlay .content a{
+    font-family: var(--paragraph-color);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 175%;
+    text-align: center;
+    color: var(--comon-colot);
+}
+/* Beuty Cream reviw section Ends */
+
+/* New Arrival Product  */
+.heading h3{
+    font-family: var(--primaryFont);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 128%;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 24px;
+}
+/* New Arrival Product  Ends */
+
+/* Cosmetic Cream Banner */
+#comneticBanner{
+    margin-top: 100px;
+    background-image: url(../images/lipstice\ banner.png);
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 524px;
+    display: flex;
+    align-items: center;
+}
+
+
+#comneticBanner h3{
+    font-family: var(--primaryFont);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 128%;
+    color: var(--comon-colot);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+#comneticBanner p{
+    font-family: var(--secondaryFont);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 175%;
+    color: var(--comon-colot);
+    margin-bottom: 30px;
+}
+
+#comneticBanner a{
+    font-family: var(--primaryFont);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 167%;
+    text-align: center;
+    color: var(--comon-colot);
+    padding: 13px 0 13px 34px;
+    border: 1px solid var(--comon-colot);
+}
+
+#comneticBanner a span i{
+    padding-right: 34px;
+    padding-left: 5px;
+}
+
+/* Cosmetic Cream Banner Ends */
+
+/* Best Sales Section */
+#bestSellerProduct .heading h3{
+    font-family: var(--primaryFont);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 128%;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 14px;
+    margin-top: 100px;
+}
+
+#bestSellerProduct .productFullPart{
+    padding: 0;
+}
+
+#bestSellerProduct .productFullPart .product{
+    margin-top: 24px;
+}
+
+.seeAllProduct{
+    display: flex;
+    justify-content: center;
+    margin-top: 26px;
+    margin-bottom: 55px;
+}
+
+.seeAllProduct a{
+    font-family: var(--primaryFont);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 175%;
+    text-align: center;
+    color: var(--comon-colot);
+    padding: 14px 5px 14px 31px;
+    background: var(--primaryColor);
+}
+
+.seeAllProduct a span{
+    padding-right: 31px;
+}
+
+.zoomArea {
+    overflow: hidden;
+}
+
+/* Best Sales Section Ends */
+
+/* Deals of the day */
+#dealOfTheDay .wrapper{
+    height: 646px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+
+.timer{
+    width: 100%;
+    max-width: 424px;
+    border-radius: 50px;
+    text-align: center;
+    padding: 7px 0;
+    margin: auto;
+    transform: translateY(-50%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px -5px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    background: var(--comon-colot);
+}
+
+.timer ul li{
+    display: inline-block;
+    margin: 0 22px;
+    position: relative;
+}
+
+.timer ul li h4{
+    font-family: var(--primaryFont);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 142%;
+    text-align: center;
+    color: var(--text-color);
+    
+}
+.timer ul li p{
+    font-family: var(--primaryFont);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 162%;
+    text-align: center;
+    color: var(--paragraph-color);
+    
+}
+
+.timer ul li::before,
+.timer ul li::after{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--primaryColor);
+    border-radius: 50%;
+    display: block;
+}
+
+.timer ul li::before{
+    top: 12px;
+    right: -24px;
+}
+.timer ul li::after{
+    bottom: 12px;
+    right: -24px;
+}
+
+.timer ul li:last-child:before,
+.timer ul li:last-child:after{
+    display: none;
+}
+/* Deals of the day Ends */
